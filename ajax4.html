@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<button id="button">get name</button>
+<script type="text/javascript">
+	document.getElementById('button').addEventListener('click',loadtext);
+	function loadtext(argument) {
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET','process.php',true)
+		xhr.onload = function(){
+			if(xhr.status==200){
+				console.log(xhr.responseText);
+			}
+		}
+		xhr.send();
+	}
+</script>
+</body>
+</html>
